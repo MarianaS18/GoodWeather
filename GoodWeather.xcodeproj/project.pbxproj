@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		564207062776175200548FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564207052776175200548FB0 /* AppDelegate.swift */; };
 		564207082776175200548FB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564207072776175200548FB0 /* SceneDelegate.swift */; };
-		5642070A2776175200548FB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564207092776175200548FB0 /* ViewController.swift */; };
 		5642070D2776175200548FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5642070B2776175200548FB0 /* Main.storyboard */; };
 		5642070F2776175300548FB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5642070E2776175300548FB0 /* Assets.xcassets */; };
 		564207122776175300548FB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564207102776175300548FB0 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		564207022776175200548FB0 /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564207052776175200548FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564207072776175200548FB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		564207092776175200548FB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5642070C2776175200548FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5642070E2776175300548FB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		564207112776175300548FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,22 @@
 		564207042776175200548FB0 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				564207192776181D00548FB0 /* Controllers */,
 				564207052776175200548FB0 /* AppDelegate.swift */,
 				564207072776175200548FB0 /* SceneDelegate.swift */,
-				564207092776175200548FB0 /* ViewController.swift */,
 				5642070B2776175200548FB0 /* Main.storyboard */,
 				5642070E2776175300548FB0 /* Assets.xcassets */,
 				564207102776175300548FB0 /* LaunchScreen.storyboard */,
 				564207132776175300548FB0 /* Info.plist */,
 			);
 			path = GoodWeather;
+			sourceTree = "<group>";
+		};
+		564207192776181D00548FB0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +143,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5642070A2776175200548FB0 /* ViewController.swift in Sources */,
 				564207062776175200548FB0 /* AppDelegate.swift in Sources */,
 				564207082776175200548FB0 /* SceneDelegate.swift in Sources */,
 			);
