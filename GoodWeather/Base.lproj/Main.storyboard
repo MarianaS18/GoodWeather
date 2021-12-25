@@ -17,13 +17,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wBq-Ou-hN7">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="100" id="wBq-Ou-hN7" customClass="WeatherTableViewCell" customModule="GoodWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wBq-Ou-hN7" id="jHO-hJ-aRb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LZ-GD-RVF">
+                                            <rect key="frame" x="20" y="11" width="46" height="78"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUZ-UR-9pM">
+                                            <rect key="frame" x="318" y="11" width="76" height="78"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7LZ-GD-RVF" secondAttribute="bottom" id="1Fl-pp-Pwb"/>
+                                        <constraint firstItem="7LZ-GD-RVF" firstAttribute="leading" secondItem="jHO-hJ-aRb" secondAttribute="leadingMargin" id="3aP-Tl-kjk"/>
+                                        <constraint firstItem="CUZ-UR-9pM" firstAttribute="trailing" secondItem="jHO-hJ-aRb" secondAttribute="trailingMargin" id="aUm-DM-qqH"/>
+                                        <constraint firstItem="CUZ-UR-9pM" firstAttribute="top" secondItem="jHO-hJ-aRb" secondAttribute="topMargin" id="bef-Pa-cEA"/>
+                                        <constraint firstItem="CUZ-UR-9pM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7LZ-GD-RVF" secondAttribute="trailing" constant="20" id="e7c-3X-Y4e"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="CUZ-UR-9pM" secondAttribute="bottom" id="o6B-3O-D9K"/>
+                                        <constraint firstItem="7LZ-GD-RVF" firstAttribute="top" secondItem="jHO-hJ-aRb" secondAttribute="topMargin" id="p6O-XN-gD2"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="7LZ-GD-RVF" id="CmI-0W-XpO"/>
+                                    <outlet property="temperatureLabel" destination="CUZ-UR-9pM" id="Qse-VT-Pkv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
