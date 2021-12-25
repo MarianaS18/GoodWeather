@@ -78,10 +78,41 @@
                     <view key="view" contentMode="scaleToFill" id="ik2-lB-7yR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lV-di-9hA">
+                                <rect key="frame" x="16" y="106" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4S-gl-g8O">
+                                <rect key="frame" x="179" y="160" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="Iw5-ec-jLy" eventType="touchUpInside" id="x0L-gx-meT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0up-KS-Nie"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S4S-gl-g8O" firstAttribute="centerX" secondItem="2lV-di-9hA" secondAttribute="centerX" id="FPR-c5-jXX"/>
+                            <constraint firstItem="S4S-gl-g8O" firstAttribute="top" secondItem="2lV-di-9hA" secondAttribute="bottom" constant="20" id="JeE-NQ-Kvn"/>
+                            <constraint firstItem="2lV-di-9hA" firstAttribute="leading" secondItem="0up-KS-Nie" secondAttribute="leading" constant="16" id="NQs-y9-dgT"/>
+                            <constraint firstItem="2lV-di-9hA" firstAttribute="top" secondItem="0up-KS-Nie" secondAttribute="top" constant="50" id="XUH-wc-dGe"/>
+                            <constraint firstItem="0up-KS-Nie" firstAttribute="trailing" secondItem="2lV-di-9hA" secondAttribute="trailing" constant="16" id="n8Q-yO-qT9"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="q9a-Zu-5rl"/>
+                    <navigationItem key="navigationItem" title="Add City" id="q9a-Zu-5rl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jo6-b2-9pq">
+                            <connections>
+                                <action selector="cancel:" destination="Iw5-ec-jLy" id="6b0-dl-iz8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityNameTextField" destination="2lV-di-9hA" id="D8S-0E-Boe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-rM-lUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
