@@ -62,7 +62,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Setting" id="ewq-ho-uHT"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CFz-cH-mTc">
                             <connections>
-                                <segue destination="yAp-89-6yX" kind="presentation" id="L1A-mL-Ca8"/>
+                                <segue destination="yAp-89-6yX" kind="presentation" identifier="goToAddWeatherVC" id="L1A-mL-Ca8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -89,7 +89,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                 <connections>
-                                    <action selector="save:" destination="Iw5-ec-jLy" eventType="touchUpInside" id="x0L-gx-meT"/>
+                                    <action selector="saveCityButtonPressed:" destination="Iw5-ec-jLy" eventType="touchUpInside" id="5hZ-dp-iuM"/>
                                 </connections>
                             </button>
                         </subviews>
