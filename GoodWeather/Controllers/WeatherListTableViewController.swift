@@ -10,11 +10,17 @@ import UIKit
 class WeatherListViewController: UITableViewController {
     // MARK: - Private properties
     private var weatherListVM = WeatherListViewModel()
+    private var lastUnitSelection: Unit!
     
     // MARK: - View funtions
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let userDefaults = UserDefaults.standard
+        if let value = userDefaults.value(forKey: "unit") as? String {
+            self.lastUnitSelection = Unit(rawValue: value)!
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,6 +47,8 @@ class WeatherListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAddWeatherVC" {
             prepareSegueForAddWeatherVC(segue: segue)
+        } else if segue.identifier == "goToSetting" {
+            prepareSegueForSettingVC(segue: segue)
         }
     }
     
@@ -54,6 +62,16 @@ class WeatherListViewController: UITableViewController {
         }
         addWeatherCityVC.delegate = self
     }
+    
+    func prepareSegueForSettingVC(segue: UIStoryboardSegue) {
+        guard let nav = segue.destination as? UINavigationController else {
+            fatalError("NavigationController not found")
+        }
+        guard let settingsTVC = nav.viewControllers.first as? SettingTableViewController else {
+            fatalError("SettingTableViewController not found")
+        }
+        settingsTVC.delegate = self
+    }
 }
 
 // MARK: - AddWeatherDelegate
@@ -61,5 +79,16 @@ extension WeatherListViewController: AddWeatherDelegate {
     func addWeatherDidSave(vm: WeatherViewModel) {
         weatherListVM.addWeatherViewModel(vm)
         tableView.reloadData()
+    }
+}
+
+// MARK: - SettingDelegate
+extension WeatherListViewController: SettingDelegate {
+    func settingsDone(vm: SettingViewModel) {
+        if lastUnitSelection.rawValue != vm.selectedUnit.rawValue {
+            weatherListVM.updateUnit(to: vm.selectedUnit)
+            tableView.reloadData()
+            lastUnitSelection = Unit(rawValue: vm.selectedUnit.rawValue)
+        }
     }
 }

@@ -23,4 +23,30 @@ class WeatherListViewModel {
     func modelAt(_ index: Int) -> WeatherViewModel {
         return weatherViewModels[index]
     }
+    
+    func updateUnit(to unit: Unit) {
+        switch unit {
+            case .fahrenheit:
+                toFahrenheit()
+            case .celsius:
+                toCelsius()
+        }
+    }
+    
+    // MARK: - Private funktions
+    private func toFahrenheit() {
+        weatherViewModels = weatherViewModels.map { vm in
+            let weatherModel = vm
+            weatherModel.temperature = (weatherModel.temperature * 9 / 5) + 32
+            return weatherModel
+        }
+    }
+    
+    private func toCelsius() {
+        weatherViewModels = weatherViewModels.map { vm in
+            let weatherModel = vm
+            weatherModel.temperature = (weatherModel.temperature - 32) * 5 / 9
+            return weatherModel
+        }
+    }
 }

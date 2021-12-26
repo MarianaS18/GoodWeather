@@ -11,18 +11,16 @@ import UIKit
 class WeatherViewModel {
     // MARK: - Public properties
     let weather: WeatherResponce
+    var temperature: Double
     
     var city: String {
         return weather.name
     }
     
-    var temperature: Double {
-        return weather.main.temp
-    }
-    
     // MARK: - Constructor
     init(weather: WeatherResponce) {
         self.weather = weather
+        self.temperature = weather.main.temp
     }
     
     
