@@ -9,7 +9,7 @@ import Foundation
 
 class WeatherListViewModel {
     // MARK: - Private properties
-    private var weatherViewModels = [WeatherViewModel]()
+    var weatherViewModels = [WeatherViewModel]()
     
     // MARK: - Public functions
     func addWeatherViewModel(_ vm: WeatherViewModel) {
