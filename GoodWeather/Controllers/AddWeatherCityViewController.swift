@@ -13,7 +13,11 @@ protocol AddWeatherDelegate {
 
 class AddWeatherCityViewController: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var cityNameTextField: UITextField!
+    @IBOutlet weak var cityNameTextField: BindingTextField! {
+        didSet {
+            cityNameTextField.bind { self.addWeatherVM.city = $0 }
+        }
+    }
     
     // MARK: - Private properties
     private var addWeatherVM = AddWeatherViewModel()
@@ -23,6 +27,8 @@ class AddWeatherCityViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func saveCityButtonPressed(_ sender: UIButton) {
+        print(self.addWeatherVM)
+        
         if let city = cityNameTextField.text {
             addWeatherVM.addWeather(for: city) { weatherVM in
                 self.delegate?.addWeatherDidSave(vm: weatherVM)

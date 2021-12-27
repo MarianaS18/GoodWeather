@@ -8,6 +8,9 @@
 import Foundation
 
 class AddWeatherViewModel {
+    // MARK: - Public properties
+    var city: String = ""
+    
     // MARK: - Public functions
     func addWeather(for city: String, completion: @escaping (WeatherViewModel) -> Void) {
         let weatherURL = Constants.Urls.urlForWeather(city: city)

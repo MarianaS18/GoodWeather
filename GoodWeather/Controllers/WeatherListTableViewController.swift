@@ -49,6 +49,8 @@ class WeatherListViewController: UITableViewController {
             prepareSegueForAddWeatherVC(segue: segue)
         } else if segue.identifier == "goToSetting" {
             prepareSegueForSettingVC(segue: segue)
+        } else if segue.identifier == "goToWeatherDetail" {
+            prepareSegueForWeatherDetailVC(segue: segue)
         }
     }
     
@@ -71,6 +73,17 @@ class WeatherListViewController: UITableViewController {
             fatalError("SettingTableViewController not found")
         }
         settingsTVC.delegate = self
+    }
+    
+    func prepareSegueForWeatherDetailVC(segue: UIStoryboardSegue) {
+        
+        guard let weatherDetailVC = segue.destination as? WeatherDetailsViewController,
+            let indexPath = self.tableView.indexPathForSelectedRow else {
+                return
+        }
+        
+        let weatherVM = self.weatherListVM.modelAt(indexPath.row)
+        weatherDetailVC.weatherViewModel = weatherVM
     }
 }
 
